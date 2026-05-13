@@ -225,9 +225,6 @@ Status      : [ ACTIVELY BUILDING ] ██████████ 80%
 | 🏆 **BIS Standards Writing** | 3rd Place — Bureau of Indian Standards competition | 2025 |
 | 🛠️ **Workshop Speaker** | Web Design & Development — 2-day technical workshop | 2025 |
 
-<br/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=srinidhipossible-123&theme=radical&no-bg=true&no-frame=true&column=6&margin-w=8&rank=SSS,SS,S,AAA,AA,A,B" width="90%" alt="Trophies"/>
 
 </div>
 
