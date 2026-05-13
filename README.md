@@ -41,10 +41,9 @@
 ```yaml
 Developer   : Srinidhi S Joshi
 Role        : Data Science & Full Stack Engineer
-Location    : Bengaluru, India
-University  : GM University — B.Tech (DS & IoT)
+University  : GM University — B.Tech (DS & IoT) · 6th Sem
 Focus       : Agentic AI · LLMs · Full Stack Dev
-SGPA        : Sem 1 → 8.63  |  Sem 2 → 8.78
+SGPA        : S1→8.63 | S2→8.78 | S3→8.94 | S4→8.94 | S5→8.50
 Status      : [ ACTIVELY BUILDING ] ██████████ 80%
 ```
 
