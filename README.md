@@ -4,7 +4,7 @@
     ░░  CYBERPUNK HEADER  ░░
 ══════════════════════════════════════════════════════════════-->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0221,50:1a0533,100:001a3a&height=180&section=header&text=SRINIDHI%20S%20JOSHI&fontSize=50&fontColor=00f5ff&fontAlignY=45&desc=Data%20Science%20%26%20Full%20Stack%20Developer&descSize=17&descAlignY=68&descColor=bf80ff" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=timeAuto&height=180&section=header&text=SRINIDHI%20S%20JOSHI&fontSize=50&fontColor=00f5ff&fontAlignY=45&desc=Data%20Science%20%26%20Full%20Stack%20Developer&descSize=17&descAlignY=68&descColor=bf80ff" width="100%"/>
 
 <!--══════  TYPING ANIMATION  ══════-->
 <img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&weight=700&size=19&pause=1200&color=00F5FF&center=true&vCenter=true&width=700&height=38&lines=Initializing+Neural+Network...;Full-Stack+Engineer+%7C+AI+%26+ML+Explorer;Agentic+AI+Systems+%7C+LLM+Automation;SIH+2024+Finalist+%7C+eRaksha+2026+Runner+Up;Building+the+Future%2C+One+Commit+at+a+Time" alt="Typing SVG"/>
@@ -113,9 +113,9 @@ Status      : [ ACTIVELY BUILDING ] ██████████ 80%
 
 <br/>
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=srinidhipossible-123&show_icons=true&theme=radical&hide_border=true&bg_color=0d0221&title_color=00f5ff&icon_color=bf80ff&text_color=c9d1d9&ring_color=00f5ff&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
+<img height="175" src="https://github-readme-stats.vercel.app/api?username=srinidhipossible-123&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d0221&title_color=00f5ff&icon_color=bf80ff&text_color=c9d1d9&ring_color=00f5ff&include_all_commits=true&count_private=true&cache_seconds=1800" alt="GitHub Stats"/>
 &nbsp;&nbsp;
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=srinidhipossible-123&theme=radical&hide_border=true&bg_color=0d0221&title_color=00f5ff&text_color=c9d1d9&layout=compact&langs_count=8" alt="Top Languages"/>
+<img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=srinidhipossible-123&theme=tokyonight&hide_border=true&bg_color=0d0221&title_color=00f5ff&text_color=c9d1d9&layout=compact&langs_count=8&cache_seconds=1800" alt="Top Languages"/>
 
 <br/><br/>
 
