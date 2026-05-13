@@ -4,7 +4,7 @@
     ░░  CYBERPUNK HEADER  ░░
 ══════════════════════════════════════════════════════════════-->
 
-<img src="https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif" width="100%" alt="Cyberpunk Header Banner"/>
+<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="100%" alt="Cyberpunk Header Banner"/>
 
 <!--══════  TYPING ANIMATION  ══════-->
 <img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&weight=700&size=19&pause=1200&color=00F5FF&center=true&vCenter=true&width=700&height=38&lines=Initializing+Neural+Network...;Full-Stack+Engineer+%7C+AI+%26+ML+Explorer;Agentic+AI+Systems+%7C+LLM+Automation;SIH+2024+Finalist+%7C+eRaksha+2026+Runner+Up;Building+the+Future%2C+One+Commit+at+a+Time" alt="Typing SVG"/>
@@ -109,9 +109,10 @@ Status      : [ ACTIVELY BUILDING ] ██████████ 80%
 
 <br/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=srinidhipossible-123&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
+<!-- GitHub Stats — using gh-readme-stats.vercel.app (working mirror) -->
+<img height="170" src="https://gh-readme-stats.vercel.app/api?username=srinidhipossible-123&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats"/>
 &nbsp;&nbsp;
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=srinidhipossible-123&theme=tokyonight&hide_border=true&layout=compact&langs_count=8" alt="Top Languages"/>
+<img height="170" src="https://gh-readme-stats.vercel.app/api/top-langs/?username=srinidhipossible-123&theme=tokyonight&hide_border=true&layout=compact&langs_count=8" alt="Top Languages"/>
 
 <br/><br/>
 
