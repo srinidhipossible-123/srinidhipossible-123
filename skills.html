@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Skills Universe · Srinidhi S Joshi</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--cyan:#00f5ff;--purple:#bf80ff;--bg:#0d0221;--border:rgba(0,245,255,0.15);--text:#c9d1d9}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif}
+
+/* Grid BG */
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0}
+
+/* Scanlines */
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.04) 2px,rgba(0,0,0,0.04) 4px);pointer-events:none;z-index:50}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(13,2,33,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.brand-title{font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--cyan);letter-spacing:3px;text-transform:uppercase}
+.back-btn{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--text);text-decoration:none;border:1px solid var(--border);padding:6px 14px;border-radius:4px;letter-spacing:2px;transition:all .3s}
+.back-btn:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 10px rgba(0,245,255,.25)}
+
+/* Filter bar */
+.filter-bar{position:fixed;top:60px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:12px 24px;background:rgba(13,2,33,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.filter-label{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(201,209,217,.45);letter-spacing:2px}
+.filter-btn{padding:7px 18px;background:transparent;border:1px solid rgba(0,245,255,.2);border-radius:4px;color:var(--text);font-family:'Rajdhani',sans-serif;font-weight:600;font-size:13px;letter-spacing:1px;cursor:pointer;transition:all .3s;text-transform:uppercase}
+.filter-btn:hover,.filter-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,245,255,.06);box-shadow:0 0 16px rgba(0,245,255,.2)}
+.count{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(0,245,255,.55);letter-spacing:2px;margin-left:4px}
+
+/* Arena */
+#arena{position:fixed;top:110px;left:0;right:0;bottom:0;overflow:hidden;z-index:1}
+
+/* Skill ball */
+.ball{position:absolute;width:64px;height:64px;border-radius:14px;cursor:pointer;user-select:none;transition:opacity .45s ease,filter .25s ease;will-change:left,top}
+.ball img{width:100%;height:100%;border-radius:14px;display:block;pointer-events:none;-webkit-user-drag:none}
+.ball:hover{filter:drop-shadow(0 0 14px rgba(0,245,255,.75)) brightness(1.15);z-index:999}
+.ball .tip{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);background:rgba(13,2,33,.95);border:1px solid rgba(0,245,255,.35);color:var(--cyan);padding:3px 10px;border-radius:4px;font-family:'Share Tech Mono',monospace;font-size:10px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;letter-spacing:1px;z-index:999}
+.ball:hover .tip{opacity:1}
+.ball.hide{opacity:0;pointer-events:none}
+
+/* Category glow colours */
+.cat-frontend:hover{filter:drop-shadow(0 0 12px rgba(97,218,251,.8)) brightness(1.15)}
+.cat-backend:hover{filter:drop-shadow(0 0 12px rgba(71,162,72,.8)) brightness(1.15)}
+.cat-ai:hover{filter:drop-shadow(0 0 12px rgba(255,111,0,.8)) brightness(1.15)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><div class="dot"></div><span class="brand-title">Skills Universe</span></div>
+  <a class="back-btn" href="https://github.com/srinidhipossible-123">← PROFILE</a>
+</header>
+
+<div class="filter-bar">
+  <span class="filter-label">FILTER :</span>
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="frontend">Frontend Development</button>
+  <button class="filter-btn" data-cat="backend">Backend &amp; Databases</button>
+  <button class="filter-btn" data-cat="ai">AI · ML · DevOps</button>
+  <span class="count" id="cnt"></span>
+</div>
+
+<div id="arena"></div>
+
+<script>
+const SKILLS = [
+  {id:'html',      name:'HTML5',         cat:'frontend'},
+  {id:'css',       name:'CSS3',          cat:'frontend'},
+  {id:'js',        name:'JavaScript',    cat:'frontend'},
+  {id:'ts',        name:'TypeScript',    cat:'frontend'},
+  {id:'react',     name:'React',         cat:'frontend'},
+  {id:'nextjs',    name:'Next.js',       cat:'frontend'},
+  {id:'vite',      name:'Vite',          cat:'frontend'},
+  {id:'tailwind',  name:'Tailwind CSS',  cat:'frontend'},
+  {id:'framer',    name:'Framer Motion', cat:'frontend'},
+  {id:'py',        name:'Python',        cat:'backend'},
+  {id:'fastapi',   name:'FastAPI',       cat:'backend'},
+  {id:'flask',     name:'Flask',         cat:'backend'},
+  {id:'nodejs',    name:'Node.js',       cat:'backend'},
+  {id:'mongodb',   name:'MongoDB',       cat:'backend'},
+  {id:'mysql',     name:'MySQL',         cat:'backend'},
+  {id:'sklearn',   name:'Scikit-Learn',  cat:'ai'},
+  {id:'tensorflow',name:'TensorFlow',    cat:'ai'},
+  {id:'git',       name:'Git',           cat:'ai'},
+  {id:'github',    name:'GitHub',        cat:'ai'},
+  {id:'vercel',    name:'Vercel',        cat:'ai'},
+  {id:'docker',    name:'Docker',        cat:'ai'},
+  {id:'figma',     name:'Figma',         cat:'ai'},
+];
+
+const SIZE = 64;
+const SPEED_MAX = 2.6;
+const DAMPING = 0.995;
+
+const arena = document.getElementById('arena');
+let W = arena.clientWidth, H = arena.clientHeight;
+let activeFilter = 'all';
+let particles = [];
+
+/* Build particles */
+SKILLS.forEach(skill => {
+  const el = document.createElement('div');
+  el.className = `ball cat-${skill.cat}`;
+  el.innerHTML = `<img src="https://skillicons.dev/icons?i=${skill.id}&theme=dark" alt="${skill.name}" loading="lazy"/><span class="tip">${skill.name}</span>`;
+  arena.appendChild(el);
+
+  const angle = Math.random() * Math.PI * 2;
+  const speed = 0.8 + Math.random() * (SPEED_MAX - 0.8);
+
+  const p = {
+    el, skill,
+    x: Math.random() * (W - SIZE),
+    y: Math.random() * (H - SIZE),
+    vx: Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+    visible: true,
+    hovering: false,
+  };
+
+  el.addEventListener('mouseenter', () => { p.hovering = true; });
+  el.addEventListener('mouseleave', () => { p.hovering = false; });
+
+  particles.push(p);
+  el.style.left = p.x + 'px';
+  el.style.top  = p.y + 'px';
+});
+
+updateCount();
+
+/* Filter buttons */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    activeFilter = btn.dataset.cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    particles.forEach(p => {
+      const show = activeFilter === 'all' || p.skill.cat === activeFilter;
+      p.visible = show;
+      if (!show) {
+        p.el.classList.add('hide');
+      } else {
+        p.el.classList.remove('hide');
+        /* Give a fresh random velocity when re-shown */
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1 + Math.random() * (SPEED_MAX - 1);
+        p.vx = Math.cos(angle) * speed;
+        p.vy = Math.sin(angle) * speed;
+      }
+    });
+    updateCount();
+  });
+});
+
+function updateCount() {
+  const total = SKILLS.length;
+  const visible = activeFilter === 'all' ? total : SKILLS.filter(s => s.cat === activeFilter).length;
+  document.getElementById('cnt').textContent = `[ ${visible} / ${total} ]`;
+}
+
+/* Physics loop */
+function tick() {
+  const active = particles.filter(p => p.visible);
+
+  active.forEach(p => {
+    if (p.hovering) return;
+
+    p.vx *= DAMPING;
+    p.vy *= DAMPING;
+
+    /* Maintain minimum speed */
+    const spd = Math.hypot(p.vx, p.vy);
+    if (spd < 0.5) {
+      const a = Math.random() * Math.PI * 2;
+      p.vx = Math.cos(a) * 1.2;
+      p.vy = Math.sin(a) * 1.2;
+    }
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    /* Wall bounce */
+    if (p.x <= 0)        { p.x = 0;        p.vx = Math.abs(p.vx); }
+    if (p.x >= W - SIZE) { p.x = W - SIZE; p.vx = -Math.abs(p.vx); }
+    if (p.y <= 0)        { p.y = 0;        p.vy = Math.abs(p.vy); }
+    if (p.y >= H - SIZE) { p.y = H - SIZE; p.vy = -Math.abs(p.vy); }
+
+    p.el.style.left = p.x + 'px';
+    p.el.style.top  = p.y + 'px';
+  });
+
+  /* Circle collision (elastic) */
+  for (let i = 0; i < active.length; i++) {
+    for (let j = i + 1; j < active.length; j++) {
+      const a = active[i], b = active[j];
+      if (a.hovering || b.hovering) continue;
+      const dx = (b.x + SIZE/2) - (a.x + SIZE/2);
+      const dy = (b.y + SIZE/2) - (a.y + SIZE/2);
+      const dist = Math.hypot(dx, dy);
+      const minD = SIZE * 0.92;
+      if (dist < minD && dist > 0) {
+        const nx = dx / dist, ny = dy / dist;
+        const rel = (a.vx - b.vx)*nx + (a.vy - b.vy)*ny;
+        if (rel > 0) {
+          a.vx -= rel * nx; a.vy -= rel * ny;
+          b.vx += rel * nx; b.vy += rel * ny;
+        }
+        const overlap = (minD - dist) / 2;
+        a.x -= nx * overlap; a.y -= ny * overlap;
+        b.x += nx * overlap; b.y += ny * overlap;
+      }
+    }
+  }
+
+  requestAnimationFrame(tick);
+}
+
+tick();
+
+/* Resize */
+window.addEventListener('resize', () => {
+  W = arena.clientWidth;
+  H = arena.clientHeight;
+});
+</script>
+</body>
+</html>

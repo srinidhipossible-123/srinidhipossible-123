@@ -79,21 +79,19 @@ Status      : [ ACTIVELY BUILDING ] ██████████ 80%
 
 <br/>
 
-**Frontend Development**
-
-<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,vite,tailwind,framer&perline=9&theme=dark" alt="Frontend Skills"/>
-
-<br/><br/>
-
-**Backend & Databases**
-
-<img src="https://skillicons.dev/icons?i=python,fastapi,flask,nodejs,mongodb,mysql&perline=6&theme=dark" alt="Backend Skills"/>
+<!-- ✦ Interactive floating skills universe ✦ -->
+<a href="https://srinidhipossible-123.github.io/srinidhipossible-123/skills.html">
+  <img src="https://img.shields.io/badge/⟩%20LAUNCH%20SKILLS%20UNIVERSE-Click%20to%20explore%20interactive%20floating%20logos-00f5ff?style=for-the-badge&labelColor=0d0221&color=00f5ff" alt="Launch Skills Universe"/>
+</a>
 
 <br/><br/>
 
-**AI · ML · DevOps**
+> 🚀 **[Click above](https://srinidhipossible-123.github.io/srinidhipossible-123/skills.html)** to open the **interactive Skills Universe** — all 22 logos float freely with physics, filter by category in real-time!
 
-<img src="https://skillicons.dev/icons?i=sklearn,tensorflow,git,github,vercel,docker,figma&perline=7&theme=dark" alt="AI ML DevOps Skills"/>
+<br/>
+
+<!-- Static preview for quick reference -->
+<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,vite,tailwind,framer,py,fastapi,flask,nodejs,mongodb,mysql,sklearn,tensorflow,git,github,vercel,docker,figma&perline=11&theme=dark" alt="All Skills Preview"/>
 
 </div>
 
